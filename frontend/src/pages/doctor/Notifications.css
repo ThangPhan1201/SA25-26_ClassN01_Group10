@@ -1,0 +1,192 @@
+.notif-container {
+    padding: 40px;
+    background-color: #fcfdfd;
+    min-height: 100vh;
+  }
+  
+  .notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .notif-header h1 { font-size: 28px; font-weight: 800; color: #333; }
+  .highlight-green { color: #53CCAB; }
+  .notif-header p { color: #8e96a3; margin-top: 5px; }
+  
+  .btn-mark-all {
+    background: #53CCAB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .notif-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  }
+  
+  .notif-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  
+  .notif-tabs { display: flex; gap: 30px; }
+  .tab-item {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #8e96a3;
+    cursor: pointer;
+    padding-bottom: 5px;
+    position: relative;
+  }
+  .tab-item.active { color: #333; }
+  .tab-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -21px; left: 0; width: 100%; height: 3px;
+    background: #333;
+  }
+  
+  .notif-search-box {
+    background: #f5f7f9;
+    border-radius: 20px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+  }
+  .notif-search-box input { border: none; background: none; outline: none; width: 100%; }
+  
+  /* Notif Item */
+  .notif-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: 0.2s;
+  }
+  .notif-item:hover { background-color: #f9fbfb; }
+  
+  .notif-left { display: flex; gap: 20px; align-items: center; }
+  
+  .notif-icon-box {
+    width: 50px; height: 50px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bg-mint { background: #e6f7f3; }
+  .bg-rose { background: #ffebeb; }
+  .bg-blue { background: #ebf3ff; }
+  
+  .notif-content h4 { font-size: 16px; margin: 0; color: #333; display: flex; align-items: center; gap: 8px; }
+  .unread-dot { width: 8px; height: 8px; background: #53CCAB; border-radius: 50%; }
+  .notif-content p { margin: 5px 0 0; color: #8e96a3; font-size: 14px; }
+  
+  .notif-right { text-align: right; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; }
+  .notif-time { font-size: 13px; color: #b0b0b0; }
+  .btn-more { background: none; border: none; color: #b0b0b0; cursor: pointer; }
+  
+  .btn-view-older {
+    width: 100%; padding: 20px; background: none; border: none;
+    color: #53CCAB; font-weight: 600; cursor: pointer; text-align: center;
+  }
+
+  /* Màu nền cho Icon Box theo thiết kế */
+.bg-mint-light {
+    background-color: #E2FFF7; /* Xanh mint nhạt */
+  }
+  
+  .bg-rose-light {
+    background-color: #FFE9E9; /* Hồng nhạt */
+  }
+  
+  .bg-blue-light {
+    background-color: #EBF3FF; /* Xanh dương nhạt */
+  }
+  
+  .bg-gray-light {
+    background-color: #F5F5F5;
+  }
+  
+  /* Định dạng Icon SVG */
+  .notif-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px; /* Bo góc nhẹ như ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .notif-svg-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Hiệu ứng dòng chưa đọc */
+  .unread-row {
+    background-color: #F8FAFC; /* Nền xanh cực nhẹ cho dòng chưa đọc */
+  }
+  
+  .unread-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #2DD4BF; /* Màu mint đậm */
+    border-radius: 50%;
+    margin-left: 6px;
+  }
+  
+  /* Nút View older ở cuối */
+  .view-older-box {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+  
+  .btn-view-older {
+    color: #53CCAB;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .notif-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden; /* Đảm bảo icon không tràn ra ngoài */
+  }
+  
+  .notif-svg-icon {
+    width: 24px;   /* Ép kích thước cố định */
+    height: 24px;
+    display: block;
+    object-fit: contain; /* Giữ tỷ lệ icon */
+  }
+  
+  /* Thêm màu sắc cho box nếu cần */
+  .bg-mint-light { background-color: #e2fff7; }
+  .bg-rose-light { background-color: #ffe9e9; }
+  .bg-gray-light { background-color: #f5f5f5; }
+  /* Thêm class này vào cuối file CSS của bạn */
+.unread-dot.dot-red {
+    background-color: #FF4D4F; /* Màu đỏ thông báo */
+  }

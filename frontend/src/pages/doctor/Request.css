@@ -1,0 +1,760 @@
+/* --- LAYOUT CHUNG --- */
+.booking-container {
+  padding: 40px;
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Thêm class cha phía trước để tăng độ ưu tiên */
+.welcome-box .welcome-heading {
+    color: #1e293b !important; /* Thêm !important để ép trình duyệt nhận màu này */
+    font-weight: 800;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    margin: 0;
+}
+
+/* Đảm bảo phần highlight (tên bác sĩ) vẫn có màu xanh */
+.welcome-box .welcome-heading .highlight-text {
+    color: #53CCAB !important;
+}
+
+.highlight-text {
+  color: #222222;
+}
+.booking-header {
+  margin-bottom: 30px;
+}
+
+.booking-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* --- SIDEBAR LỊCH --- */
+.calendar-aside {
+  flex: 0 0 40%;
+}
+
+.custom-calendar-card {
+  position: relative;
+  background: transparent;
+  padding: 30px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #6bd4b7;
+}
+.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 16px;
+}
+.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 16px;
+}
+
+/* --- CUSTOM REACT-CALENDAR --- */
+.custom-calendar-card .react-calendar {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  font-size: 18px;
+}
+.custom-calendar-card .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+  color: #6bd4b7 !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.custom-calendar-card .react-calendar__tile {
+  color: #4a4a4a !important;
+  font-weight: 600;
+  padding: 15px 0 !important;
+}
+.custom-calendar-card .react-calendar__tile--active {
+  background: #6bd4b7 !important;
+  color: rgb(77, 48, 48) !important;
+  border-radius: 8px;
+}
+
+/* --- DANH SÁCH GRADIENT (Bên phải) --- */
+.request-list-section {
+  flex: 1;
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  border-radius: 30px;
+  padding: 40px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(83, 204, 171, 0.2);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.booking-search {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.booking-search input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+}
+.booking-search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- TABLE --- */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.booking-table th {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+.booking-table td {
+  padding: 20px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
+}
+
+/* --- PATIENT CELL & AVATAR ĐỒNG BỘ --- */
+.p-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.p-avatar-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Làm avatar tròn */
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Tránh bị méo khi thu nhỏ */
+}
+
+.patient-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  color: #53ccab;
+}
+
+.p-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  color: white;
+}
+.p-info {
+  font-size: 12px;
+  opacity: 0.9;
+  margin: 0;
+  color: white;
+}
+.p-time {
+  font-weight: 600;
+  color: white;
+}
+
+/* --- CỘT STATUS (2 NÚT) --- */
+.status-action-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn-status-confirm {
+  background-color: #28bf96 !important;
+  color: white !important;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-status-cancelled {
+  background-color: #ff7676 !important;
+  color: white !important;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-status-confirm:hover,
+.btn-status-cancelled:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* --- CỘT MORE ACTION --- */
+.booking-actions-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-details-link {
+  background: white !important;
+  color: #4a4a4a !important;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-details-link:hover {
+  background: #f0fdfa !important;
+  transform: scale(1.05);
+}
+
+.no-data-white {
+  text-align: center;
+  padding: 40px;
+  color: white;
+  opacity: 0.8;
+  font-weight: 600;
+}
+/* --- LAYOUT CHUNG --- */
+.booking-container {
+  padding: 40px;
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.highlight-text {
+  color: #53ccab;
+}
+.booking-header {
+  margin-bottom: 30px;
+}
+
+.booking-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* --- SIDEBAR LỊCH --- */
+.calendar-aside {
+  flex: 0 0 30%;
+}
+
+.custom-calendar-card {
+  position: relative;
+  background: #ffffff;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #53ccab;
+  z-index: 1;
+}
+.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 16px;
+}
+.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 16px;
+}
+
+/* --- CUSTOM REACT-CALENDAR (SỬA LỖI MÀU) --- */
+.custom-calendar-card .react-calendar {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  font-family: inherit;
+}
+
+/* Tiêu đề tháng và nút điều hướng */
+.custom-calendar-card .react-calendar__navigation {
+  display: flex;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.custom-calendar-card .react-calendar__navigation button {
+  color: #1e293b !important; /* Màu xám đen đậm - Rất rõ ràng */
+  min-width: 44px;
+  background: none;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.custom-calendar-card .react-calendar__navigation button:enabled:hover,
+.custom-calendar-card .react-calendar__navigation button:enabled:focus {
+  background-color: #f1f5f9 !important;
+  color: #53ccab !important;
+  border-radius: 8px;
+}
+
+/* Tên các thứ trong tuần */
+.custom-calendar-card .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+  color: #53ccab !important;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Các ô ngày */
+.custom-calendar-card .react-calendar__tile {
+  color: #475569 !important;
+  font-weight: 600;
+  padding: 12px 0 !important;
+  border-radius: 8px;
+}
+
+/* Ngày thuộc tháng khác (neighboring months) - LÀM MỜ ĐI */
+.custom-calendar-card .react-calendar__month-view__days__day--neighboringMonth {
+  color: #cbd5e1 !important; /* Màu xám rất nhạt */
+  font-weight: 400 !important;
+}
+
+/* Ngày đang chọn */
+.custom-calendar-card .react-calendar__tile--active {
+  background: #53ccab !important;
+  color: white !important; /* Chữ trắng trên nền xanh */
+  box-shadow: 0 4px 10px rgba(83, 204, 171, 0.4);
+}
+
+/* --- DANH SÁCH GRADIENT (Bên phải) --- */
+.request-list-section {
+  flex: 1;
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  border-radius: 30px;
+  padding: 35px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(83, 204, 171, 0.2);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.booking-search {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.booking-search input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  width: 150px;
+}
+.booking-search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- TABLE --- */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.booking-table th {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.booking-table td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.p-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.p-avatar-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.patient-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0;
+  color: white;
+}
+.p-info {
+  font-size: 12px;
+  opacity: 0.85;
+  margin: 0;
+  color: white;
+}
+.p-time {
+  font-weight: 700;
+  color: white;
+  font-size: 15px;
+}
+
+/* --- BUTTONS --- */
+.status-action-btns {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-details-link {
+  background: white !important;
+  color: #4a4a4a !important;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #53ccab;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+/* --- LAYOUT CHUNG --- */
+.booking-container {
+  padding: clamp(1rem, 3vw, 2.5rem);
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.highlight-text {
+  color: #53ccab;
+}
+.booking-header {
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.booking-content {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: flex-start;
+}
+
+/* --- SIDEBAR LỊCH (SCALE THEO MÀN HÌNH) --- */
+.calendar-aside {
+  flex: 0 0 30%; /* Giữ tỉ lệ đồng bộ với Appointment */
+  min-width: 300px;
+}
+
+.custom-calendar-card {
+  position: relative;
+  background: #ffffff;
+  padding: clamp(1rem, 2vw, 2rem);
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.corner-decoration {
+  position: absolute;
+  width: clamp(30px, 5vw, 45px);
+  height: clamp(30px, 5vw, 45px);
+  border: 4px solid #53ccab;
+  z-index: 1;
+}
+.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 1.5rem;
+}
+.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 1.5rem;
+}
+
+/* --- CUSTOM REACT-CALENDAR (SCALE Ô VÀ CHỮ) --- */
+.custom-calendar-card .react-calendar {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  font-family: inherit;
+  font-size: clamp(0.85rem, 1.1vw, 1.1rem) !important;
+}
+
+.custom-calendar-card .react-calendar__navigation {
+  display: flex;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.custom-calendar-card .react-calendar__navigation button {
+  color: #1e293b !important;
+  min-width: 44px;
+  background: none;
+  font-size: clamp(1rem, 1.3vw, 1.25rem) !important;
+  font-weight: 800;
+}
+
+.custom-calendar-card .react-calendar__navigation button:enabled:hover {
+  background-color: #f1f5f9 !important;
+  border-radius: 0.5rem;
+}
+
+.custom-calendar-card .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+  color: #53ccab !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Scale chiều cao ô ngày theo chiều cao màn hình (vh) */
+.custom-calendar-card .react-calendar__tile {
+  color: #475569 !important;
+  font-weight: 600;
+  padding: clamp(0.8rem, 1.8vh, 1.4rem) 0 !important;
+  border-radius: 0.75rem;
+}
+
+.custom-calendar-card .react-calendar__month-view__days__day--neighboringMonth {
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+}
+
+.custom-calendar-card .react-calendar__tile--active {
+  background: #53ccab !important;
+  color: white !important;
+  box-shadow: 0 4px 10px rgba(83, 204, 171, 0.4);
+}
+
+/* --- DANH SÁCH GRADIENT (Bên phải) --- */
+.request-list-section {
+  flex: 1;
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  border-radius: 2rem;
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+  color: white;
+  box-shadow: 0 10px 30px rgba(83, 204, 171, 0.2);
+  overflow-x: auto;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.list-header h2 {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  margin: 0;
+}
+
+.booking-search {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.booking-search input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  width: clamp(120px, 10vw, 180px);
+  font-size: 0.9rem;
+}
+
+/* --- TABLE RESPONSIVE --- */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.booking-table th {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.p-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.p-avatar-wrapper {
+  width: clamp(40px, 4vw, 48px);
+  height: clamp(40px, 4vw, 48px);
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.p-name {
+  font-weight: 700;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  margin: 0;
+}
+.p-info {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+.p-time {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* --- BUTTONS SCALE --- */
+.status-action-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-status-confirm,
+.btn-status-cancelled,
+.btn-details-link {
+  padding: 0.6rem clamp(0.8rem, 1.2vw, 1.2rem);
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+  .booking-content {
+    flex-direction: column; /* Lịch nhảy lên trên bảng */
+    align-items: center;
+  }
+  .calendar-aside {
+    width: 100%;
+    max-width: 400px;
+  }
+  .request-list-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-container {
+    padding: 1rem;
+  }
+  .status-action-btns {
+    flex-direction: column;
+  }
+}
+

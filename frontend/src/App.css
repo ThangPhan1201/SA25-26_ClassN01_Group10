@@ -1,0 +1,46 @@
+/* Đổi màu chữ khi hover và active */
+.ant-menu-horizontal > .ant-menu-item-selected {
+    color: #4cc9b0 !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item-selected::after {
+    border-bottom-color: #4cc9b0 !important;
+    border-bottom-width: 3px !important;
+}
+
+.ant-menu-item:hover {
+    color: #4cc9b0 !important;
+}
+
+.user-profile-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.user-profile-wrapper:hover {
+    background-color: rgba(76, 201, 176, 0.1);
+}
+
+/* Khối chứa 2 dòng text */
+.user-info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2; /* Kiểm soát khoảng cách giữa các dòng */
+}
+
+.user-name {
+    font-size: 14px;
+    margin-bottom: 0 !important; /* Xóa margin mặc định của Typography */
+    display: block;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #888;
+    margin-top: -2px; /* Kéo dòng role gần lại dòng tên nếu cần */
+    display: block;
+}

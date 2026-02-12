@@ -1,0 +1,87 @@
+/* Kế thừa toàn bộ khung từ HeaderDoctor */
+@import "./HeaderDoctor.css";
+
+/* Thay đổi màu sắc chủ đạo sang xanh dương cho Patient */
+.header-patient .header-menu .ant-menu-item-selected {
+  color: #3b82f6 !important; 
+}
+
+.header-patient .header-menu .ant-menu-item-selected::after {
+  border-bottom-color: #3b82f6 !important;
+}
+
+.header-patient .header-menu .ant-menu-item:hover::after {
+  border-bottom-color: #3b82f6 !important;
+}
+
+/* Border Profile màu xanh dương */
+.patient-profile-border {
+  border: 1px solid #3b82f6 !important; 
+}
+
+.patient-profile-border:hover {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15) !important;
+}
+
+.patient-profile-border:hover .user-name {
+  color: #3b82f6 !important;
+}
+
+/* Đồng bộ kích thước font menu với Doctor */
+.patient-menu {
+  font-size: 18px !important;
+  font-weight: 550 !important;
+}
+
+/* Điều chỉnh khoảng cách icon và text trong menu */
+.patient-menu .ant-menu-title-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tùy chỉnh nhỏ để menu patient trông cân đối hơn */
+.header-menu {
+  justify-content: center;
+  flex: 1;
+}
+
+/* Đảm bảo màu chữ và hiệu ứng hover giống hệt doctor (#4cc9b0) */
+.ant-menu-item-selected {
+  color: #4cc9b0 !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item-selected::after {
+  border-bottom-color: #4cc9b0 !important;
+}
+
+.user-name {
+  color: #141619 !important; /* Màu chữ tên giống doctor */
+}
+
+.user-role {
+  color: #abb2bf !important; /* Màu chữ role giống doctor */
+  font-size: 12px;
+}
+
+/* Container chứa tên và role */
+.user-info-text {
+  display: flex;
+  flex-direction: column; /* Xếp dọc thay vì dùng thẻ <br /> */
+  line-height: 1.2; /* Thu hẹp chiều cao dòng mặc định */
+}
+
+/* Chỉnh tên người dùng */
+.user-info-text .user-name {
+
+  display: block;
+  font-size: 14px;
+}
+
+/* Chỉnh dòng Patient Account */
+.user-info-text .user-role {
+  font-size: 12px;
+  color: #6b7280; /* Màu xám nhẹ cho role */
+  display: block;
+}

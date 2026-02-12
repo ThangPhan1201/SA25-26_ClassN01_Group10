@@ -1,0 +1,72 @@
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+  }
+  
+  .signup-card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    border: none;
+  }
+  
+  .signup-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .signup-steps {
+    margin-bottom: 30px;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .signup-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .signup-buttons button {
+    flex: 1;
+  }
+  
+  .ant-btn-primary {
+    height: 40px;
+    font-weight: 600;
+  }
+  
+  /* Tùy chỉnh màu xanh Mint giống Header Doctor của bạn */
+  .ant-steps-item-process .ant-steps-item-icon {
+    background: #4cc9b0;
+    border-color: #4cc9b0;
+  }
+  
+  .ant-steps-item-finish .ant-steps-item-icon {
+    border-color: #4cc9b0;
+  }
+  
+  .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+    color: #4cc9b0;
+  }
+
+  .ant-upload-select-picture-card {
+    margin: 0 auto 20px auto !important; /* Căn giữa ô upload ảnh */
+  }
+  
+  .signup-buttons button {
+    height: 40px;
+    border-radius: 8px;
+  }

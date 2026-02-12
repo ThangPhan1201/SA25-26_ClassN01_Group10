@@ -1,0 +1,1169 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* --- BIẾN MÀU SẮC TỐI ƯU --- */
+:root {
+  --primary-color: #28bf96;
+  --cal-grad-start: #c6f2e6;
+  --cal-grad-end: #53ccab;
+  --text-dark: #1e293b;
+  --text-muted: #94a3b8;
+}
+
+.appt-container {
+  padding: 40px;
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* --- HEADER & STATS --- */
+.appt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.welcome-box .welcome-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.welcome-box .doctor-highlight {
+  color: var(--primary-color);
+}
+
+.stats-gradient-box {
+  display: flex;
+  gap: 25px;
+  padding: 15px 30px;
+  background: linear-gradient(
+    135deg,
+    var(--cal-grad-start) 0%,
+    var(--cal-grad-end) 100%
+  );
+  border-radius: 20px;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 8px 24px rgba(40, 191, 150, 0.12);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.stat-value small {
+  font-size: 12px;
+  color: var(--primary-color);
+  margin-left: 2px;
+}
+.stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.stat-divider {
+  width: 1px;
+  height: 35px;
+  background: #f1f5f9;
+}
+
+/* --- CONTENT --- */
+.appt-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.calendar-sidebar {
+  flex: 0 0 420px;
+}
+
+.gradient-theme-calendar {
+  background: linear-gradient(
+    135deg,
+    var(--cal-grad-start) 0%,
+    var(--cal-grad-end) 100%
+  );
+  padding: 30px;
+  border-radius: 28px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 15px 30px rgba(83, 204, 171, 0.2);
+}
+
+/* --- CALENDAR UI --- */
+.custom-calendar-ui.react-calendar {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.custom-calendar-ui .react-calendar__navigation button {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.custom-calendar-ui .react-calendar__month-view__weekdays__weekday {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.custom-calendar-ui .react-calendar__tile {
+  color: white;
+  padding: 18px 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.custom-calendar-ui .react-calendar__tile--active {
+  background: white !important;
+  color: var(--cal-grad-end) !important;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.custom-calendar-ui .react-calendar__tile--now {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+/* --- TABLE SECTION --- */
+.table-section {
+  flex: 1;
+}
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+}
+
+.appt-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.appt-table th {
+  text-align: left;
+  padding: 0 20px;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.appt-table td {
+  background: white;
+  padding: 16px 20px;
+  transition: transform 0.2s;
+}
+
+.appt-table tr:hover td {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.appt-table td:first-child {
+  border-radius: 16px 0 0 16px;
+}
+.appt-table td:last-child {
+  border-radius: 0 16px 16px 0;
+}
+
+/* PATIENT INFO */
+.p-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.p-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e6f9f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.patient-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.p-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+.p-info {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+.p-time {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* STATUS PILLS THEO THIẾT KẾ */
+.status-pill {
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.status-pill.completed {
+  background: #d5fbf1;
+  color: #11ad84;
+}
+.status-pill.waiting {
+  background: #ffedcf;
+  color: #fd8a6b;
+}
+.status-pill.cancelled {
+  background: #ffdede;
+  color: #f96840;
+}
+
+/* BUTTONS */
+.p-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-exam {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-details {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+.appt-container {
+  padding: 40px;
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* --- STATS GRADIENT BOX --- */
+.stats-gradient-box {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 20px;
+}
+
+.stat-pill-box {
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+}
+
+.stat-pill-box .stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.stat-pill-box .stat-value {
+  font-size: 18px;
+  font-weight: 800;
+}
+.stat-pill-box .stat-value small {
+  font-size: 11px;
+  margin-left: 2px;
+  opacity: 0.8;
+}
+
+/* Colors for Stats Box (Khớp yêu cầu) */
+.st-waiting {
+  background: #ffedcf;
+  color: #fd8a6b;
+}
+.st-completed {
+  background: #d5fbf1;
+  color: #11ad84;
+}
+.st-cancelled {
+  background: #ffdede;
+  color: #f96840;
+}
+.st-pending {
+  background: #e1f0ff;
+  color: #0052cc;
+} /* Pending: Chữ 0052CC, nền E1F0FF */
+
+/* --- LAYOUT CARD CHO DANH SÁCH --- */
+.table-section-card {
+  flex: 1;
+  background: white;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.table-controls h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 180px;
+}
+
+/* TABLE STYLES (Chỉnh lại cho hợp với Card) */
+.appt-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.appt-table th {
+  text-align: left;
+  padding: 15px 20px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f1f5f9;
+}
+.appt-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #f8fafc;
+}
+.appt-table tr:last-child td {
+  border-bottom: none;
+}
+
+.p-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #e6f9f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.patient-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-name {
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  font-size: 14px;
+}
+.p-info {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* STATUS PILLS TRONG BẢNG */
+.status-pill {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.status-pill.completed {
+  background: #d5fbf1;
+  color: #11ad84;
+}
+.status-pill.waiting {
+  background: #ffedcf;
+  color: #fd8a6b;
+}
+.status-pill.cancelled {
+  background: #ffdede;
+  color: #f96840;
+}
+.status-pill.pending {
+  background: #e1f0ff;
+  color: #0052cc;
+}
+
+/* CALENDAR & HEADER REMAINS */
+.calendar-sidebar {
+  flex: 0 0 420px;
+}
+.gradient-theme-calendar {
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  padding: 30px;
+  border-radius: 28px;
+  border: 2px solid #28bf96;
+  box-shadow: 0 15px 30px rgba(83, 204, 171, 0.2);
+}
+.custom-calendar-ui.react-calendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: white;
+}
+.custom-calendar-ui .react-calendar__tile--active {
+  background: white !important;
+  color: #53ccab !important;
+  border-radius: 12px;
+}
+
+.btn-exam {
+  background: #28bf96;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-exam:hover {
+  background: #11ad84;
+}
+.btn-details {
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.border-highlight {
+  border: 2px solid #28bf96 !important;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+.appt-container {
+  padding: 40px;
+  background-color: #fcfdfd;
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* --- HEADER & WELCOME --- */
+.appt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.welcome-box .welcome-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+.welcome-box .doctor-highlight {
+  color: #28bf96;
+}
+.welcome-box p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* --- STATS GRADIENT BOX (Yêu cầu mới) --- */
+.stats-gradient-main {
+  display: flex;
+  gap: 12px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(83, 204, 171, 0.25);
+  border: 2px solid var(--primary-color);
+}
+
+.stat-pill-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 90px;
+}
+.stat-label-text {
+  font-size: 10px;
+  font-weight: 800;
+  color: #484848;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.stat-number-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.stat-main-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: #484848;
+}
+
+/* Pill nhỏ bao quanh % */
+.stat-pct-tag {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.pct-waiting {
+  background: #ffedcf;
+  color: #fd8a6b;
+}
+.pct-completed {
+  background: #d5fbf1;
+  color: #11ad84;
+}
+.pct-cancelled {
+  background: #ffdede;
+  color: #f96840;
+}
+.pct-pending {
+  background: #e1f0ff;
+  color: #0052cc;
+}
+
+.v-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(72, 72, 72, 0.15);
+}
+
+/* --- MAIN LIST CARD --- */
+.main-list-card {
+  flex: 1;
+  background: white;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f1f5f9;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.list-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+.search-wrapper input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  width: 200px;
+}
+
+/* TABLE MODERN */
+.appt-table-modern {
+  width: 100%;
+  border-collapse: collapse;
+}
+.appt-table-modern th {
+  text-align: left;
+  padding: 12px 15px;
+  color: #94a3b8;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f1f5f9;
+}
+.appt-table-modern td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.p-avatar-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #e6f9f4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28bf96;
+}
+.p-avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-name {
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  font-size: 14px;
+}
+.p-info {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+.p-time-cell {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+/* STATUS TAGS */
+.status-tag {
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.status-tag.waiting {
+  background: #ffedcf;
+  color: #fd8a6b;
+}
+.status-tag.completed {
+  background: #d5fbf1;
+  color: #11ad84;
+}
+.status-tag.cancelled {
+  background: #ffdede;
+  color: #f96840;
+}
+
+/* BUTTONS */
+.btn-start {
+  background: #28bf96;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 12px;
+  flex: 0 0 45%;
+}
+.btn-start:hover {
+  background: #11ad84;
+  transform: translateY(-1px);
+}
+.btn-view {
+  background: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+/* CALENDAR SIDEBAR */
+.calendar-sidebar {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.calendar-card-gradient {
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  padding: 50px;
+  border-radius: 24px;
+  border: 1px solid #28bf96;
+  border: 3px solid var(--primary-color);
+}
+.custom-calendar-ui.react-calendar {
+  width: 25vw;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+}
+.custom-calendar-ui .react-calendar__navigation button {
+  color: white;
+  font-weight: 700;
+}
+.custom-calendar-ui .react-calendar__tile {
+  color: white;
+  font-weight: 600;
+  padding: 20px 5px;
+  transition: all 0.2s ease; /* Hiệu ứng mượt mà */
+  border-radius: 12px; /* Bo góc sẵn để khi hover hiện khung hình vuông/tròn đẹp */
+}
+.custom-calendar-ui .react-calendar__tile--active {
+  background: white !important;
+  color: #53ccab !important;
+  border-radius: 12px;
+}
+
+/* Màu cho những ngày thuộc tháng khác (ngày mờ) */
+.custom-calendar-ui .react-calendar__month-view__days__day--neighboringMonth {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ) !important; /* Màu trắng mờ nếu nền calendar là gradient tối */
+  font-weight: 400; /* Làm chữ mảnh hơn để phân biệt */
+}
+
+/* Đảm bảo khi hover vào những ngày tháng khác vẫn có hiệu ứng nhưng nhẹ nhàng hơn */
+.custom-calendar-ui
+  .react-calendar__month-view__days__day--neighboringMonth:enabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Màu cho các ngày trong tháng hiện tại (để tương phản rõ hơn) */
+.custom-calendar-ui .react-calendar__month-view__days__day {
+  color: white; /* Giữ màu trắng rõ nét cho ngày trong tháng */
+  font-size: 20px;
+}
+/* Điều chỉnh container chính */
+.appt-content {
+  display: flex;
+  gap: 3vw; /* Khoảng cách linh hoạt theo chiều rộng màn hình */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Sidebar chứa lịch */
+.calendar-sidebar {
+  flex: 0 0 35%; /* Lịch chiếm 35% chiều rộng */
+  min-width: 320px; /* Không để lịch quá nhỏ trên màn hình bé */
+}
+
+/* Danh sách cuộc hẹn chính */
+.main-list-card {
+  flex: 1; /* Tự động chiếm hết phần không gian còn lại */
+  background: white;
+  padding: clamp(15px, 2vw, 30px); /* Padding linh hoạt */
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  min-width: 0; /* Quan trọng để table không bị tràn */
+  overflow: hidden; /* Giữ nội dung trong bo góc */
+}
+
+.appt-table-modern {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appt-table-modern th,
+.appt-table-modern td {
+  padding: clamp(10px, 1.2vw, 20px); /* Co giãn khoảng cách trong ô */
+  text-align: left;
+}
+
+/* Tên bệnh nhân co giãn font chữ */
+.p-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Font tự scale */
+}
+
+.p-info {
+  font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+  color: var(--text-muted);
+}
+
+/* Avatar co giãn nhẹ */
+.p-avatar-box {
+  width: clamp(35px, 3.5vw, 45px);
+  height: clamp(35px, 3.5vw, 45px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.appt-table-modern {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appt-table-modern th,
+.appt-table-modern td {
+  padding: clamp(10px, 1.2vw, 20px); /* Co giãn khoảng cách trong ô */
+  text-align: left;
+}
+
+/* Tên bệnh nhân co giãn font chữ */
+.p-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Font tự scale */
+}
+
+.p-info {
+  font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+  color: var(--text-muted);
+}
+
+/* Avatar co giãn nhẹ */
+.p-avatar-box {
+  width: clamp(35px, 3.5vw, 45px);
+  height: clamp(35px, 3.5vw, 45px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+/* --- CALENDAR SIDEBAR & SCALE --- */
+.calendar-sidebar {
+  flex: 0 0 30%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar-card-gradient {
+  background: linear-gradient(135deg, #c6f2e6 0%, #53ccab 100%);
+  padding: 30px;
+  border-radius: 24px;
+  border: 3px solid var(--primary-color);
+  display: flex;
+  justify-content: center; /* Căn giữa card theo chiều ngang */
+}
+
+/* --- TRỌNG TÂM: CĂN GIỮA TUYỆT ĐỐI --- */
+
+.custom-calendar-ui.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  color: white !important;
+  font-size: 1.1rem;
+}
+
+/* 1. Căn giữa tiêu đề Tháng/Năm */
+.custom-calendar-ui .react-calendar__navigation {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-bottom: 20px;
+}
+
+.custom-calendar-ui .react-calendar__navigation button {
+  color: white !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: none !important;
+}
+
+/* 2. Căn giữa các chữ cái Thứ (M, T, W...) */
+.custom-calendar-ui .react-calendar__month-view__weekdays {
+  text-align: center !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.custom-calendar-ui .react-calendar__month-view__weekdays__weekday {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 10px 0 !important;
+}
+
+.custom-calendar-ui .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+  border: none !important;
+}
+
+/* 3. Căn giữa các con số Ngày */
+.custom-calendar-ui .react-calendar__tile {
+  max-width: 100% !important;
+  padding: 15px 0 !important; /* Tăng padding dọc để ô cao hơn */
+  background: none;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Căn giữa ngang */
+  justify-content: center !important; /* Căn giữa dọc */
+  text-align: center !important;
+  color: white !important;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Ép thẻ nội dung bên trong nút ngày ra giữa */
+.custom-calendar-ui .react-calendar__tile abbr {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* Hiệu ứng Hover & Active */
+.custom-calendar-ui .react-calendar__tile:enabled:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px;
+}
+
+.custom-calendar-ui .react-calendar__tile--active {
+  background: white !important;
+  color: #53ccab !important;
+  border-radius: 12px;
+}
+
+/* --- CĂN GIỮA VÀ ĐỔI MÀU NGÀY NGOÀI THÁNG --- */
+
+/* Màu cho những ngày thuộc tháng trước hoặc tháng sau (ngày mờ) */
+.custom-calendar-ui .react-calendar__month-view__days__day--neighboringMonth {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ) !important; /* Làm mờ hẳn đi (độ trong suốt 30%) */
+  font-weight: 400 !important; /* Chỉnh chữ mỏng hơn để phân biệt với ngày trong tháng */
+}
+
+/* Đảm bảo các ngày mờ này vẫn được căn giữa như các ngày khác */
+.custom-calendar-ui .react-calendar__month-view__days__day--neighboringMonth {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Hiệu ứng khi hover vào những ngày mờ (nếu bạn vẫn muốn cho chọn) */
+.custom-calendar-ui
+  .react-calendar__month-view__days__day--neighboringMonth:enabled:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* --- ĐIỀU CHỈNH LẠI CĂN GIỮA TỔNG THỂ (ĐỂ CHẮC CHẮN) --- */
+.custom-calendar-ui .react-calendar__tile {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.custom-calendar-ui .react-calendar__tile abbr {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* Tên bệnh nhân */
+.p-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  /* Min: 14px, Scalable: 1.1vw, Max: 18px */
+  font-size: clamp(0.875rem, 1.1vw, 1.125rem);
+}
+
+/* Thông tin phụ (Gender, Age) */
+.p-info {
+  color: var(--text-muted);
+  font-size: clamp(0.75rem, 0.9vw, 0.875rem);
+}
+
+/* Status Tag */
+.status-tag {
+  /* Padding co giãn theo màn hình */
+  padding: clamp(4px, 0.5vw, 6px) clamp(10px, 1vw, 16px);
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+  display: inline-block;
+}
+
+.p-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-start,
+.btn-view {
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Scale padding và font size */
+  padding: clamp(8px, 0.8vw, 12px) clamp(16px, 1.5vw, 24px);
+  font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+
+  /* Giới hạn độ dài tối đa để nút không bị thô */
+  max-width: 160px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-start {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(40, 191, 150, 0.2);
+}
+
+.btn-view {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.p-time-cell {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+}
+
+/* Container cho bộ lọc dưới lịch */
+.status-filter-card {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .filter-title {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid #f1f5f9;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.2s ease;
+    text-align: left;
+  }
+  
+  .filter-btn:hover {
+    background: #f8fafc;
+    border-color: var(--primary-color);
+  }
+  
+  .filter-btn.active {
+    background: #eefcf8;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-style: italic;
+  }

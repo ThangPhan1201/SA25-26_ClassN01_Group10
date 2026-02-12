@@ -1,0 +1,412 @@
+:root {
+    --primary: #28bf96;
+    --bg-soft: #f4f7f6;
+    --text-main: #1e293b;
+  }
+  
+  .patient-appt-page {
+    background-color: var(--bg-soft);
+    min-height: 100vh;
+  }
+  
+  .appt-main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 40px;
+  }
+  
+  /* Header */
+  .appt-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .welcome-title { font-size: 32px; font-weight: 800; color: var(--text-main); }
+  .welcome-title .highlight { color: var(--primary); }
+  
+  .search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    gap: 10px;
+    width: 350px;
+  }
+  
+  .search-bar-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-weight: 500;
+  }
+  
+  /* Layout Content */
+  .appt-content-layout {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* Sidebar Calendar (Style Request.css) */
+  .calendar-sidebar { flex: 0 0 350px; }
+  
+  .custom-calendar-card {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  
+  .patient-custom-calendar {
+    width: 100% !important;
+    border: none !important;
+    font-family: inherit;
+  }
+  
+  .react-calendar__tile--active {
+    background: var(--primary) !important;
+    border-radius: 8px;
+  }
+  
+  /* List Section (Style Appointments.css) */
+  .appt-list-section { flex: 1; }
+  
+  .list-card {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .count-tag {
+    background: #f0fdfa;
+    color: var(--primary);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  
+  /* Table Style */
+  .patient-table { width: 100%; border-collapse: collapse; }
+  .patient-table th {
+    text-align: left;
+    padding: 15px;
+    color: #94a3b8;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .patient-table td { padding: 20px 15px; border-bottom: 1px solid #f1f5f9; }
+  
+  .p-cell { display: flex; align-items: center; gap: 15px; }
+  .p-avatar-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e2e8f0;
+  }
+  .p-avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+  .p-name { font-weight: 700; color: var(--text-main); margin: 0; }
+  .p-info { font-size: 12px; color: #64748b; margin: 0; }
+  
+  .time-cell { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); }
+  
+  .specialty-tag {
+    background: #eff6ff;
+    color: #3b82f6;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  /* Status Pill */
+  .status-pill {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .status-pill.confirmed { background: #dcfce7; color: #15803d; }
+  .status-pill.pending { background: #fef9c3; color: #a16207; }
+  .status-pill.cancelled { background: #fee2e2; color: #b91c1c; }
+  
+  .btn-details {
+    background: #f1f5f9;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .btn-details:hover { background: #e2e8f0; color: var(--text-main); }
+  
+  .no-data { text-align: center; padding: 40px !important; color: #94a3b8; font-style: italic; }
+
+  /* Nút Details mặc định */
+.btn-details {
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-details:hover {
+    background-color: #e2e8f0;
+  }
+  
+  /* Nút Cancel mới */
+  .btn-cancel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff1f2; /* Màu đỏ nhạt */
+    color: #e11d48; /* Chữ đỏ đậm */
+    border: 1px solid #fecdd3;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #e11d48;
+    color: white;
+    border-color: #e11d48;
+  }
+
+
+  
+  /* Group container để căn chỉnh các nút */
+  .action-buttons-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  /* --- Tùy chỉnh các ngày không thuộc tháng hiện tại --- */
+
+/* Làm mờ các ngày ngoài tháng */
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #cbd5e1 !important; /* Màu xám nhạt (Slate 300) */
+    opacity: 0.6;
+}
+
+/* Tùy chọn: Nếu bạn muốn ẩn hoàn toàn hoặc thay đổi nền của chúng */
+/*
+.react-calendar__month-view__days__day--neighboringMonth {
+    background-color: #f8fafc !important; 
+    pointer-events: none; (Vô hiệu hóa click vào các ngày này nếu muốn)
+}
+*/
+
+/* Đảm bảo ngày trong tháng hiện tại vẫn có màu đậm */
+.react-calendar__month-view__days__day {
+    color: #1e293b; /* Màu chữ mặc định của bạn */
+}
+
+/* 1. Màu mặc định cho tất cả các ngày */
+.react-calendar__month-view__days__day {
+    color: var(--text-main) !important;
+    font-weight: 600;
+}
+
+/* 2. Màu riêng cho các ngày "ngoài tháng" - Thư viện tự thêm class này */
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #cbd5e1 !important; /* Màu xám nhạt */
+    opacity: 0.5; /* Làm mờ đi */
+}
+
+/* 3. Đảm bảo ngày đang chọn (Active) vẫn rõ nét */
+.react-calendar__tile--active {
+    background: var(--primary) !important;
+    color: white !important;
+    opacity: 1 !important;
+}
+
+/* Tận dụng lại style overlay nếu chưa có */
+.exam-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Làm tối nền */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.exam-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Style cho select và input trong modal */
+.readonly-box {
+    padding: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+/* Layout chính chia 2 cột */
+.appt-content-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr; /* Cột lịch rộng 380px, cột bảng tự giãn */
+    gap: 30px;
+}
+
+/* Nền trắng cho Card Lịch */
+.calendar-card {
+    background: #ffffff !important;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Nền trắng cho Card Danh sách */
+.table-container {
+    background: #ffffff !important;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    min-height: 500px;
+}
+
+/* Sửa hiển thị ảnh Avatar */
+.p-avatar-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.p-avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- TỔNG THỂ CARD LỊCH --- */
+.calendar-card {
+    background: #ffffff !important;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: none !important; /* Loại bỏ viền ngoài nếu có */
+}
+
+/* Loại bỏ viền đen mặc định bên trong thư viện */
+.react-calendar {
+    width: 100% !important;
+    border: none !important; /* Xóa viền đen bao quanh */
+    font-family: inherit;
+    background: transparent !important;
+}
+
+/* --- HEADER: THÁNG & NĂM --- */
+.react-calendar__navigation {
+    margin-bottom: 15px;
+    height: 44px;
+}
+
+.react-calendar__navigation button {
+    color: var(--text-main) !important;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    background: none !important;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background-color: #f1f5f9 !important;
+    border-radius: 10px;
+}
+
+/* --- THỨ TRONG TUẦN (Mon, Tue,...) --- */
+.react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #94a3b8 !important; /* Màu xám nhạt hiện đại */
+    padding-bottom: 10px;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none !important; /* Bỏ gạch chân dưới chữ */
+    border-bottom: none !important;
+}
+
+/* --- CÁC Ô NGÀY --- */
+.react-calendar__tile {
+    padding: 12px 8px !important;
+    border-radius: 12px;
+    transition: all 0.2s;
+    font-weight: 600;
+    color: var(--text-main);
+    border: none !important; /* Đảm bảo không có viền đen khi click */
+    outline: none !important;
+}
+
+/* Hiệu ứng khi hover vào ngày */
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background-color: #e2f7f1 !important;
+    color: var(--primary) !important;
+}
+
+/* Ngày hiện tại */
+.react-calendar__tile--now {
+    background: #f1f5f9 !important;
+    color: var(--primary) !important;
+}
+
+/* Ngày đang được chọn */
+.react-calendar__tile--active {
+    background: var(--primary) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(40, 191, 150, 0.3);
+}
+
+/* Các ngày ngoài tháng (làm mờ) */
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #cbd5e1 !important;
+    opacity: 0.4;
+}
+
+/* Loại bỏ viền focus chấm chấm của trình duyệt */
+button:focus {
+    outline: none !important;
+}

@@ -1,0 +1,247 @@
+.history-container {
+    padding: 40px;
+    background-color: #fcfdfd;
+    min-height: 100vh;
+  }
+  
+  .highlight-green { color: #53CCAB; border-bottom: 2px solid #53CCAB; }
+  
+  .history-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  /* SIDEBAR */
+  .history-sidebar { flex: 0 0 320px; display: flex; flex-direction: column; gap: 20px; }
+  
+  .calendar-card-white, .filter-card-white {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+  }
+  
+  .filter-card-white h3 { font-size: 16px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+  .filter-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+  .filter-group label { font-size: 14px; color: #666; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  
+  /* LIST SECTION */
+  .history-list-section { flex: 1; }
+  .list-white-box {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  
+  .history-search {
+    background: #f5f7f9;
+    padding: 8px 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+  }
+  .history-search input { border: none; background: transparent; outline: none; width: 100%; }
+  
+  /* TABLE */
+  .history-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .history-table th { text-align: left; padding: 15px; color: #8e96a3; font-weight: 600; border-bottom: 1px solid #f0f0f0; }
+  .history-table td { padding: 20px 15px; border-bottom: 1px solid #f9f9f9; }
+  
+  .p-cell { display: flex; align-items: center; gap: 12px; }
+  .p-avatar-circle {
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    border: 1px solid #53CCAB;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .p-avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+  
+  .p-name { font-weight: 700; color: #333; margin: 0; }
+  .p-info { font-size: 12px; color: #999; margin: 0; }
+  .p-diagnosis { color: #666; font-size: 14px; font-style: italic; }
+  
+  /* ACTIONS */
+  .btn-view-records {
+    background: transparent;
+    color: #53CCAB;
+    border: 1px solid #53CCAB;
+    padding: 6px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn-view-records:hover { background: #53CCAB; color: white; }
+  
+  /* FOOTER & EXPORT */
+  .history-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+  }
+  .pagination { display: flex; gap: 15px; align-items: center; color: #999; }
+  .active-page {
+    background: #53CCAB;
+    color: white;
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .btn-export {
+    background: #fff9e6;
+    color: #f4b400;
+    border: 1px solid #ffeeba;
+    padding: 8px 20px;
+    border-radius: 10px;
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* --- 1. SỬA MÀU CHỮ TRONG LỊCH (CALENDAR) --- */
+.calendar-card-white .react-calendar {
+    background: white !important;
+    border: none !important;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  /* Màu các thứ trong tuần (S, M, T...) */
+  .calendar-card-white .react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none !important;
+    color: #53CCAB !important; /* Màu xanh thương hiệu */
+    font-weight: 700;
+  }
+  
+  /* Màu các con số ngày - ĐÃ SỬA THÀNH MÀU ĐẬM */
+  .calendar-card-white .react-calendar__tile {
+    color: #333333 !important; /* Màu xám đậm dễ nhìn */
+    font-weight: 600;
+    padding: 12px 0 !important;
+  }
+  
+  /* Ngày của tháng trước/sau (làm mờ nhẹ nhưng vẫn nhìn rõ) */
+  .calendar-card-white .react-calendar__month-view__days__day--neighboringMonth {
+    color: #b0b0b0 !important;
+  }
+  
+  /* --- 2. SỬA MÀU CHỮ CỘT APPOINTMENT (THỜI GIAN) --- */
+  .history-table td.p-time {
+    color: #4A4A4A !important; /* Màu xám đậm thay vì màu trắng */
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  /* Đảm bảo chữ trong toàn bộ bảng là màu đậm */
+  .history-table td {
+    color: #333333;
+  }
+  
+  /* --- 3. ĐIỀU CHỈNH CỘT DIAGNOSIS (CHẨN ĐOÁN) --- */
+  .p-diagnosis {
+    color: #666666 !important;
+    font-size: 14px;
+    font-style: italic;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Nếu chẩn đoán quá dài sẽ hiện dấu ... */
+  }
+  
+  /* --- 4. TRẠNG THÁI NGÀY ĐƯỢC CHỌN --- */
+  .calendar-card-white .react-calendar__tile--active {
+    background: #53CCAB !important;
+    color: white !important; /* Chỉ khi chọn mới hiện chữ trắng trên nền xanh */
+    border-radius: 8px;
+  }
+
+  /* --- SỬA MÀU TÊN THÁNG/NĂM VÀ CÁC MŨI TÊN --- */
+
+/* 1. Tên tháng/năm chính giữa (ví dụ: October 2026) */
+.calendar-card-white .react-calendar__navigation__label__textContent {
+    color: #333333 !important;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  /* 2. Các nút mũi tên (<, >, <<, >>) */
+  .calendar-card-white .react-calendar__navigation button {
+    color: #53CCAB !important; /* Màu xanh cho mũi tên để tạo điểm nhấn */
+    font-size: 22px;
+    min-width: 44px;
+    background: none;
+  }
+  
+  .calendar-card-white .react-calendar__navigation button:enabled:hover,
+  .calendar-card-white .react-calendar__navigation button:enabled:focus {
+    background-color: #f0fdfa !important;
+    border-radius: 8px;
+  }
+  
+  /* 3. Đảm bảo tên các thứ (Mon, Tue...) luôn đậm */
+  .calendar-card-white .react-calendar__month-view__weekdays__weekday abbr {
+    color: #53CCAB !important;
+    text-decoration: none !important;
+    font-weight: 800;
+  }
+  
+  /* 4. Màu số ngày trong lịch (đã sửa) */
+  .calendar-card-white .react-calendar__tile {
+    color: #4A4A4A !important;
+    font-weight: 600;
+  }
+  
+  /* --- SỬA MÀU CỘT APPOINTMENT TIME --- */
+  .p-time {
+    color: #333333 !important; /* Chuyển từ trắng sang xám đậm */
+    font-weight: 700;
+  }
+  
+  /* --- SỬA CÁC ICON TRONG BẢNG (NẾU CÓ) --- */
+  .history-table .lucide {
+    color: #666666 !important; /* Màu cho các icon search, user... */
+  }
+  
+  /* Header bảng (Patient name, Appointment...) */
+  .history-table th {
+    color: #8e96a3 !important;
+    background-color: #fcfdfd;
+  }
+
+  /* --- CĂN CHỈNH NGÀY NGOÀI THÁNG TRONG LỊCH TRẮNG --- */
+
+/* 1. Làm mờ các ngày thuộc tháng trước và tháng sau */
+.calendar-card-white .react-calendar__month-view__days__day--neighboringMonth {
+    color: #cbd5e1 !important; /* Màu xám nhạt */
+    font-weight: 400 !important; /* Chữ mảnh hơn để tạo sự khác biệt */
+}
+
+/* 2. Đảm bảo các ngày này không có hiệu ứng hover quá đậm */
+.calendar-card-white .react-calendar__month-view__days__day--neighboringMonth:enabled:hover {
+    background-color: #f8fafc !important;
+    color: #94a3b8 !important;
+}
+
+/* 3. Giữ nguyên màu đậm cho các ngày TRONG tháng hiện tại để đối lập */
+.calendar-card-white .react-calendar__tile:not(.react-calendar__month-view__days__day--neighboringMonth) {
+    color: #1e293b !important;
+    font-weight: 600;
+}
+/* Tìm và sửa đoạn này trong History.css */
+.calendar-card-white .react-calendar__tile--active {
+    background: #28BF96 !important; /* Màu nền xanh thương hiệu */
+    color: white !important;        /* Chữ trắng */
+    border-radius: 10px;
+}
+
+/* Đảm bảo nội dung bên trong (thẻ abbr) cũng nhận màu trắng */
+.calendar-card-white .react-calendar__tile--active abbr {
+    color: white !important;
+}

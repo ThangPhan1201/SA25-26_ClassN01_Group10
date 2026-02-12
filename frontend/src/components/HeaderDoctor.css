@@ -1,0 +1,172 @@
+/* Khung Header chính */
+.header-doctor {
+  background-color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* Container bao quanh logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  /* Chiếm khoảng 15% chiều rộng header, tối thiểu 120px, tối đa 250px */
+  width: clamp(180px, 20vw, 300px);
+  height: 100%;
+  margin-top: 20px;
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Icon MediBook */
+.logo-container img {
+  /* Scale theo chiều rộng của container bao quanh */
+  width: 100%;
+  max-height: 80px; /* Giới hạn độ cao tối đa để không làm vỡ header */
+  object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
+  transition: transform 0.3s ease; /* Hiệu ứng mượt khi scale */
+}
+
+/* Hiệu ứng khi di chuột vào logo */
+.logo-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive cho màn hình nhỏ (Mobile/Tablet) */
+@media (max-width: 768px) {
+  .logo-container {
+    width: 100px; /* Nhỏ lại khi trên điện thoại */
+  }
+  .header-doctor {
+    padding: 0 15px; /* Giảm padding header trên mobile */
+  }
+}
+
+/* Tùy chỉnh Menu Ant Design */
+.header-menu {
+  flex: 1;
+  border-bottom: none !important;
+  font-size: 18px;
+  font-weight: 550;
+  padding-right: 50px;
+}
+
+/* Tăng khoảng cách giữa các mục Menu */
+.header-menu .ant-menu-item {
+  /* Tăng khoảng cách trái phải của mỗi từ */
+  padding: 0 3vw !important;
+  /* margin: 0 5px; */ /* Bạn cũng có thể dùng margin nếu muốn khoảng cách xa hơn nữa */
+  color: #484848 !important;
+  transition: all 0.3s ease;
+}
+
+/* Nếu bạn muốn tăng khoảng cách giữa các chữ cái trong cùng một từ (ví dụ: H o m e) */
+.header-menu .ant-menu-item .ant-menu-title-content {
+  letter-spacing: 0.5px; /* Khoảng cách giữa các chữ cái */
+}
+
+/* Đảm bảo Menu dàn hàng ngang đều nhau */
+.header-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Chỉ hoạt động với một số phiên bản Ant Design mới */
+}
+
+/* Đổi màu khi hover và khi mục đang được chọn */
+.header-menu .ant-menu-item-selected {
+  font-size: 25px !important; /* Tăng cỡ chữ lên 18px hoặc to hơn tùy bạn */
+  font-weight: 700 !important; /* Làm chữ đậm hẳn lên */
+  color: #4cc9b0 !important; /* Đảm bảo đúng màu xanh MediBook */
+}
+
+.header-menu .ant-menu-item-selected::after {
+  border-bottom-color: #4cc9b0 !important;
+  border-bottom-width: 3px !important;
+}
+
+.header-menu .ant-menu-item:hover::after {
+  border-bottom-color: #4cc9b0 !important;
+}
+
+/* Khung Profile bên phải - Đã dọn dẹp và sửa lỗi trùng lặp */
+.user-profile-wrapper {
+    display: inline-flex !important;
+    align-items: center;
+    
+    /* 1. KHỐNG CHẾ KÍCH THƯỚC */
+    height: 48px !important;    /* Chiều cao vừa vặn */
+    padding-left: 5px !important;
+    padding-right: 20px !important; /* TĂNG MẠNH: Tạo khoảng trống lớn bên phải */
+    min-width: 200px;           /* Đảm bảo ô luôn dài kể cả tên ngắn */
+    
+    /* 2. STYLE */
+    border: 1px solid #4cc9b0 !important; 
+    border-radius: 50px !important;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* 3. VỊ TRÍ */
+    align-self: center; 
+    margin-left: 20px; 
+}
+
+/* Hiệu ứng HOVER */
+.user-profile-wrapper:hover {
+    background-color: rgba(76, 201, 176, 0.1);
+    box-shadow: 0 4px 12px rgba(76, 201, 176, 0.15);
+    transform: translateY(-1px);
+}
+
+.user-info-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1 !important;
+    /* margin-left: 1px; Khoảng cách giữa Avatar và chữ */
+}
+
+.user-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap; /* Bắt buộc tên không xuống dòng */
+    margin-bottom: 0 !important;
+    padding-right: 12px;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #8c8c8c;
+    margin-top: -16px;
+}
+
+/* Đổi màu chữ tên khi hover */
+.user-profile-wrapper:hover .user-name {
+    color: #4cc9b0;
+}
+/* Xóa gạch chân khi item được chọn (Active) */
+.ant-menu-horizontal > .ant-menu-item-selected::after {
+    border-bottom: none !important;
+  }
+  
+  /* Xóa gạch chân khi di chuột vào (Hover) */
+  .ant-menu-horizontal > .ant-menu-item:hover::after {
+    border-bottom: none !important;
+  }
+  
+  /* Xóa hiệu ứng bóng nếu có ở một số phiên bản Ant Design */
+  .ant-menu-horizontal {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }

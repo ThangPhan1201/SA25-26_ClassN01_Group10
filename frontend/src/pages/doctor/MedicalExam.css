@@ -1,0 +1,371 @@
+.exam-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(40, 191, 150, 0.45);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; backdrop-filter: blur(4px);
+}
+
+.exam-card {
+    background: white; width: 95%; max-width: 950px; height: 90vh;
+    border-radius: 24px; display: flex; flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.exam-header {
+    padding: 15px 30px; border-bottom: 1px solid #f1f5f9;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.exam-body { padding: 30px; overflow-y: auto; flex: 1; }
+.main-title { font-size: 24px; color: #1e293b; margin: 0; font-weight: 800; }
+.sub-info { font-size: 13px; color: #28BF96; margin-top: 5px; font-weight: 600; }
+
+.section-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px; margin: 20px 0; }
+.patient-info-row { display: flex; gap: 20px; align-items: center; }
+
+.p-avatar-large {
+    width: 65px; height: 65px; background: white; border: 2px solid #28BF96;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #28BF96;
+}
+
+.p-contact-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; font-size: 14px; gap: 10px; border-left: 1px solid #e2e8f0; padding-left: 25px; }
+.p-contact-grid span { font-weight: 700; color: #28BF96; margin-right: 5px; }
+
+.grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+.input-group label { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; margin-bottom: 12px; }
+.input-group textarea {
+    width: 100%; height: 100px; border: 1px solid #e2e8f0; border-radius: 14px;
+    padding: 15px; outline: none; transition: 0.2s; resize: none; font-size: 14px;
+}
+.input-group textarea:focus { border-color: #28BF96; box-shadow: 0 0 0 4px rgba(40, 191, 150, 0.1); }
+
+/* Prescription Search & Dropdown */
+.section-header { position: relative; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+
+.medicine-dropdown {
+    position: absolute; right: 0; top: 48px; width: 320px; background: white;
+    border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    z-index: 100; border-radius: 14px; overflow: hidden;
+}
+
+.med-search-wrapper {
+    display: flex; align-items: center; gap: 10px; padding: 12px;
+    background: #f8fafc; border-bottom: 1px solid #f1f5f9;
+}
+.med-search-wrapper input { border: none; background: transparent; outline: none; width: 100%; font-size: 13px; }
+.med-search-wrapper svg { color: #94a3b8; }
+
+.med-list-items { max-height: 220px; overflow-y: auto; }
+.med-item { padding: 12px 15px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13px; }
+.med-item:hover { background: #f0fdfa; color: #28BF96; }
+.med-no-result { padding: 20px; text-align: center; color: #94a3b8; font-size: 13px; }
+
+/* Table */
+.med-table { width: 100%; border-collapse: collapse; }
+.med-table th { text-align: left; padding: 12px; color: #64748b; border-bottom: 2px solid #f1f5f9; font-size: 12px; }
+.med-table td { padding: 12px; border-bottom: 1px solid #f8fafc; }
+.table-input { width: 100%; border: none; border-bottom: 1px solid #e2e8f0; padding: 5px 0; outline: none; background: transparent; }
+.btn-icon-delete { background: #fee2e2; color: #ef4444; border: none; padding: 7px; border-radius: 8px; cursor: pointer; }
+
+/* Footer */
+.exam-footer { padding: 20px 30px; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; }
+.btn-complete-exam { background: #28BF96; color: white; border: none; padding: 10px 25px; border-radius: 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.btn-cancel-exam { background: #f1f5f9; color: #64748b; border: none; padding: 10px 20px; border-radius: 12px; cursor: pointer; font-weight: 600; }
+.add-med-btn { background: #28BF96; color: white; border: none; padding: 8px 15px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; }
+.exam-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(40, 191, 150, 0.45);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; backdrop-filter: blur(4px);
+}
+
+.exam-card {
+    background: white; width: 95%; max-width: 950px; height: 90vh;
+    border-radius: 24px; display: flex; flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.exam-header {
+    padding: 15px 30px; border-bottom: 1px solid #f1f5f9;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+/* NÚT X ĐÓNG MODAL - KHÔNG NỀN, KHÔNG VIỀN */
+.btn-close-transparent {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    outline: none;
+}
+
+.btn-close-transparent:hover {
+    color: #ef4444;
+}
+
+.exam-body { padding: 30px; overflow-y: auto; flex: 1; }
+.main-title { font-size: 24px; color: #1e293b; margin: 0; font-weight: 800; }
+
+/* PATIENT SUMMARY CARD - CẤU TRÚC GRID ĐỂ HIỂN THỊ THÔNG TIN */
+.patient-summary-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #e2e8f0;
+}
+
+.p-main-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.p-avatar-large {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.p-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.p-details h3 {
+    margin: 0 0 10px 0;
+    color: #1e293b;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.p-grid-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 60px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.p-grid-info .full-width {
+    grid-column: span 3;
+}
+
+.p-grid-info strong {
+    color: #1e293b;
+}
+
+/* Examination Layout */
+.exam-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }
+.section-title { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.exam-textarea { width: 100%; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; font-size: 14px; outline: none; transition: 0.2s; height: 160px; resize: none; background: #fafafa; }
+.exam-textarea:focus { border-color: #28BF96; box-shadow: 0 0 0 4px rgba(40, 191, 150, 0.12); background: white; }
+.exam-textarea.small { height: 72px; margin-bottom: 15px; }
+
+/* Prescription & Medicine Selection */
+.prescription-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.med-search-container { position: relative; }
+.btn-add-med { background: #28BF96; color: white; border: none; padding: 8px 16px; border-radius: 10px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.med-dropdown-card { position: absolute; top: 100%; right: 0; width: 300px; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; z-index: 100; margin-top: 10px; overflow: hidden; }
+.med-search-box { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #f1f5f9; gap: 8px; }
+.med-search-box input { border: none; outline: none; width: 100%; font-size: 13px; }
+.med-list-items { max-height: 220px; overflow-y: auto; }
+.med-item { padding: 12px 15px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13px; }
+.med-item:hover { background: #f0fdfa; color: #28BF96; }
+.med-no-result { padding: 20px; text-align: center; color: #94a3b8; font-size: 13px; }
+
+/* Table */
+.med-table { width: 100%; border-collapse: collapse; }
+.med-table th { text-align: left; padding: 12px; color: #64748b; border-bottom: 2px solid #f1f5f9; font-size: 12px; }
+.med-table td { padding: 12px; border-bottom: 1px solid #f8fafc; }
+.table-input { width: 100%; border: none; border-bottom: 1px solid #e2e8f0; padding: 5px 0; outline: none; background: transparent; }
+.btn-icon-delete { background: #fee2e2; color: #ef4444; border: none; padding: 7px; border-radius: 8px; cursor: pointer; }
+
+/* Footer */
+.exam-footer { padding: 20px 30px; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+.right-btns { display: flex; gap: 12px; align-items: center; }
+
+.btn-export { background: #f1f5f9; color: #475569; border: none; padding: 10px 20px; border-radius: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+
+/* NÚT CANCEL NẰM TRÁI */
+.btn-cancel-exam { background: white; color: #64748b; border: 1px solid #e2e8f0; padding: 10px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.btn-cancel-exam:hover { background: #f1f5f9; }
+
+/* NÚT COMPLETE NẰM PHẢI */
+.btn-complete-exam { background: #28BF96; color: white; border: none; padding: 10px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.exam-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(40, 191, 150, 0.45);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; backdrop-filter: blur(4px);
+}
+
+.exam-card {
+    background: white; width: 95%; max-width: 950px; height: 90vh;
+    border-radius: 24px; display: flex; flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.exam-header {
+    padding: 15px 30px; border-bottom: 1px solid #f1f5f9;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.btn-close-transparent {
+    background: transparent; border: none; color: #94a3b8;
+    cursor: pointer; padding: 4px; display: flex; align-items: center;
+    justify-content: center; transition: color 0.2s; outline: none;
+}
+.btn-close-transparent:hover { color: #ef4444; }
+
+.exam-body { padding: 30px; overflow-y: auto; flex: 1; }
+.main-title { font-size: 24px; color: #1e293b; margin: 0; font-weight: 800; }
+
+/* PATIENT SUMMARY CARD */
+.patient-summary-card {
+    background: #f8fafc; border-radius: 16px; padding: 20px;
+    margin-bottom: 25px; border: 1px solid #e2e8f0;
+}
+.p-main-info { display: flex; gap: 20px; align-items: flex-start; }
+.p-avatar-large {
+    width: 70px; height: 70px; background: white; border-radius: 15px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #e2e8f0; flex-shrink: 0;
+}
+.p-avatar-large img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+.p-details h3 { margin: 0 0 10px 0; color: #1e293b; font-size: 1.2rem; font-weight: 700; }
+.p-grid-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px 70px; font-size: 13px; color: #64748b; margin-top: 10px; }
+.p-grid-info .full-width { grid-column: span 3; }
+.p-grid-info strong { color: #1e293b; }
+
+/* DIAGNOSIS SECTION - HIỂN THỊ DẠNG CỘT (HOẶC HÀNG) TÙY Ý */
+.exam-section { margin-bottom: 30px; }
+.section-title { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.diagnosis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.exam-textarea { width: 100%; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; font-size: 14px; outline: none; transition: 0.2s; background: #fafafa; }
+.exam-textarea:focus { border-color: #28BF96; box-shadow: 0 0 0 4px rgba(40, 191, 150, 0.12); background: white; }
+.exam-textarea.small { height: 100px; resize: none; }
+
+/* Prescription & Medicine */
+.prescription-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.med-search-container { position: relative; }
+.btn-add-med { background: #28BF96; color: white; border: none; padding: 8px 16px; border-radius: 10px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.med-dropdown-card { position: absolute; top: 100%; right: 0; width: 300px; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; z-index: 100; margin-top: 10px; overflow: hidden; }
+.med-search-box { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #f1f5f9; gap: 8px; }
+.med-search-box input { border: none; outline: none; width: 100%; font-size: 13px; }
+.med-list-items { max-height: 220px; overflow-y: auto; }
+.med-item { padding: 12px 15px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13px; }
+.med-item:hover { background: #f0fdfa; color: #28BF96; }
+.med-no-result { padding: 20px; text-align: center; color: #94a3b8; font-size: 13px; }
+
+/* Table */
+.med-table { width: 100%; border-collapse: collapse; }
+.med-table th { text-align: left; padding: 12px; color: #64748b; border-bottom: 2px solid #f1f5f9; font-size: 12px; }
+.med-table td { padding: 12px; border-bottom: 1px solid #f8fafc; }
+.table-input { width: 100%; border: none; border-bottom: 1px solid #e2e8f0; padding: 5px 0; outline: none; background: transparent; }
+.btn-icon-delete { background: #fee2e2; color: #ef4444; border: none; padding: 7px; border-radius: 8px; cursor: pointer; }
+
+/* Footer */
+.exam-footer { padding: 20px 30px; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+.right-btns { display: flex; gap: 12px; align-items: center; }
+.btn-export { background: #f1f5f9; color: #475569; border: none; padding: 10px 20px; border-radius: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.btn-cancel-exam { background: white; color: #64748b; border: 1px solid #e2e8f0; padding: 10px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; }
+.btn-complete-exam { background: #28BF96; color: white; border: none; padding: 10px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.readonly-box {
+    padding: 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    min-height: 50px;
+    color: #334155;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+    background: #f0fdfa;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.info-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.info-item .val-text {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.exam-header {
+    padding: 15px 30px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between; /* Đẩy tiêu đề sang trái, nút X sang phải */
+    align-items: center;
+}
+
+.btn-close {
+    background: #f1f5f9; /* Màu nền xám nhạt cho nút */
+    border: none;
+    color: #64748b;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-close:hover {
+    background: #fee2e2; /* Đổi sang đỏ nhạt khi di chuột vào */
+    color: #ef4444;
+}

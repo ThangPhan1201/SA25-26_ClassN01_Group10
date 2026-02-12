@@ -1,0 +1,558 @@
+.dashboard-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .dashboard-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  
+  /* --- HERO SECTION --- */
+  .hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+  }
+  
+  .hero-left {
+    flex: 1;
+    max-width: 550px;
+  }
+  
+  .hero-subtitle {
+    font-size: 32px;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  
+  .hero-title {
+    font-size: 56px;
+    color: #1a1a1a;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 40px;
+  }
+  
+  .btn-get-services {
+    background-color: #28BF96; /* Màu xanh Mint giống logo */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-get-services:hover {
+    background-color: #1c9877;
+    transform: translateY(-3px);
+  }
+  
+  /* --- HERO RIGHT (IMAGE & CARDS) --- */
+  .hero-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Khối tròn xanh Mint phía sau bác sĩ */
+  .circle-bg {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background-color: #28BF96;
+    border-radius: 50%;
+    z-index: 1;
+    right: 10px;
+  }
+  
+  .doctor-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 900px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+  }
+  
+  /* Style chung cho các thẻ Card đè lên */
+  .stat-card {
+    position: absolute;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    z-index: 3;
+  }
+  
+  /* Card 1520+ */
+  .clients-card {
+    left: -20px;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 200px;
+  }
+  
+  .stat-icon {
+    background: #f0fdfa;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .stat-info h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #1a1a1a;
+  }
+  
+  .stat-info p {
+    font-size: 14px;
+    margin: 0;
+    color: #777;
+  }
+  
+  /* Card Ưu đãi bên phải */
+  .promo-card {
+    right: -30px;
+    bottom: 20%;
+    min-width: 240px;
+  }
+  
+  .promo-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .promo-card li {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .promo-card li span {
+    color: #24ae8f;
+    font-weight: bold;
+  }
+  
+  /* Họa tiết trang trí phụ (Tùy chọn) */
+  .hero-banner::before {
+    content: ":::";
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    font-size: 40px;
+    color: #4cc9b0;
+    opacity: 0.3;
+  }
+
+  .dashboard-page {
+    background-color: #F4F7F6; /* Màu nền hơi xám để làm nổi bật Card trắng */
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+  
+  .dashboard-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* --- THIẾT KẾ CARD BAO QUANH --- */
+  .hero-card {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 60px 80px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Đảm bảo hình tròn xanh không tràn ra ngoài card */
+  }
+  
+  .hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+  }
+  
+  .hero-left {
+    flex: 1;
+    z-index: 5;
+  }
+  
+  /* SỬA TẠI ĐÂY: Get Quick to bằng Medical Services nhưng không đậm */
+  .hero-subtitle {
+    font-size: 56px; /* Bằng với kích thước tiêu đề chính */
+    color: #333;
+    font-weight: 300; /* Làm chữ mỏng đi */
+    margin-bottom: -10px; /* Kéo hai dòng lại gần nhau hơn */
+    line-height: 1.1;
+  }
+  
+  .hero-title {
+    font-size: 56px;
+    color: #1a1a1a;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.1;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #777;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+  
+  .btn-get-services {
+    background-color: #28BF96;
+    color: white;
+    border: none;
+    padding: 16px 45px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-get-services:hover {
+    background-color: #1c9877;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(40, 191, 150, 0.2);
+  }
+  
+  /* --- HERO RIGHT (IMAGE & CIRCLE) --- */
+  .hero-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle-bg {
+    position: absolute;
+    width: 580px;
+    height: 580px;
+    background-color: #28BF96;
+    border-radius: 50%;
+    z-index: 1;
+    right: -20px;
+  }
+  
+  .doctor-img {
+    position: relative;
+    z-index: 2;
+    width: 110%; /* Tăng nhẹ kích thước ảnh */
+    max-width: 800px;
+    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.12));
+  }
+  
+  /* Stat Cards */
+  .stat-card {
+    position: absolute;
+    background: white;
+    padding: 18px 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .clients-card {
+    left: -40px;
+    top: 25%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .promo-card {
+    right: -20px;
+    bottom: 15%;
+    min-width: 260px;
+  }
+  
+  .promo-card li span {
+    color: #28BF96;
+  }
+
+  /* Nền xám nhạt toàn trang giống Doctor */
+.dashboard-page {
+    background-color: #f4f7f6; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Container tạo khoảng cách so với lề và header */
+  .dashboard-main-container {
+    padding: 30px 40px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* THIẾT KẾ CARD NỔI */
+  .dashboard-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1400px;
+    border-radius: 30px;
+    /* Giữ padding các cạnh khác, nhưng đặt padding-bottom = 0 */
+    padding: 60px 80px 0 80px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden; /* Quan trọng để ảnh không lòi ra ngoài bo góc ở đáy */
+    display: flex;
+    align-items: flex-end; /* Căn nội dung bám sát đáy card */
+    max-height: 700px;
+    margin-top: 3vh;
+  }
+  
+  /* --- HERO SECTION --- */
+  .hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .hero-left {
+    flex: 1;
+    z-index: 10;
+  }
+  
+  .hero-subtitle {
+    font-size: 56px;
+    color: #333;
+    font-weight: 300; /* Mỏng nhẹ */
+    margin-bottom: -5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  
+  .hero-title {
+    font-size: 56px;
+    color: #1a1a1a;
+    font-weight: 800; /* Đậm */
+    margin-bottom: 25px;
+    line-height: 1.1;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    max-width: 480px;
+  }
+  
+  .btn-get-services {
+    background-color: #28BF96;
+    color: white;
+    border: none;
+    padding: 16px 45px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn-get-services:hover {
+    background-color: #1c9877;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(40, 191, 150, 0.2);
+  }
+  
+  /* --- PHẦN ẢNH BÊN PHẢI --- */
+  .hero-right {
+    flex: 1.2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .circle-bg {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background-color: #28BF96;
+    border-radius: 50%;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+  
+  .doctor-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 750px; /* Tăng kích thước ảnh bác sĩ */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+  }
+  
+  /* Thẻ Card nhỏ đè lên */
+  .stat-card {
+    position: absolute;
+    background: white;
+    padding: 15px 22px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    z-index: 15;
+  }
+  
+  .clients-card {
+    left: -20px;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .promo-card {
+    right: -10px;
+    bottom: 20%;
+    min-width: 250px;
+  }
+  
+  .promo-card li span { color: #28BF96; font-weight: bold; }
+
+  .hero-banner {
+    display: flex;
+    align-items: center; /* Chữ vẫn căn giữa theo chiều dọc */
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .hero-right {
+    flex: 1.2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Ảnh bám sát đáy container */
+    height: 100%;
+  }
+  
+  .doctor-img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 750px;
+    display: block; /* Loại bỏ khoảng trống inline phía dưới */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+    margin-bottom: -5px; /* Đẩy nhẹ xuống để lấp đầy kẽ hở pixel nếu có */
+  }
+  
+  /* Chỉnh lại vòng tròn xanh để nó không bị cắt mất một nửa */
+  .circle-bg {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background-color: #28BF96;
+    border-radius: 50%;
+    z-index: 1;
+    bottom: -100px; /* Đẩy vòng tròn xuống thấp hơn một chút cho đẹp */
+    right: 50px;
+  }
+
+  .hero-left {
+    flex: 1;
+    z-index: 10;
+    padding-bottom: 60px; /* Tạo khoảng trống dưới nút bấm để cân bằng */
+  }
+
+  /* Gợn sóng màu xanh ở phía trên tiêu đề */
+.hero-left::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    width: 80px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='20' viewBox='0 0 80 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10C5 5 10 5 15 10C20 15 25 15 30 10C35 5 40 5 45 10C50 15 55 15 60 10C65 5 70 5 75 10' stroke='%2328BF96' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    opacity: 0.6;
+  }
+  
+  /* Gợn sóng màu xám ở phía dưới nút bấm */
+  .hero-left::after {
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    width: 100px;
+    height: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='25' viewBox='0 0 100 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15C6 10 12 10 18 15C24 20 30 20 36 15C42 10 48 10 54 15C60 20 66 20 72 15C78 10 84 10 90 15' stroke='%23ccc' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    opacity: 0.5;
+  }
+  
+  /* Chấm bi nhỏ ở phía dưới ảnh bác sĩ */
+  .hero-right::after {
+    content: " \2022 \2022 \2022 \2022 \n \2022 \2022 \2022 \2022 \n \2022 \2022 \2022 \2022 ";
+    white-space: pre;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: #28BF96;
+    opacity: 0.3;
+    line-height: 0.8;
+    z-index: 1;
+  }
+  
+  /* --- ĐIỀU CHỈNH LẠI DASHBOARD CARD --- */
+  .dashboard-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1400px;
+    border-radius: 30px;
+    padding: 40px 80px 0 80px; /* Giảm padding top một chút */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden; 
+    display: flex;
+    align-items: flex-end; 
+  }
+  
+  .hero-banner {
+    display: flex;
+    align-items: flex-end; /* Ép mọi thứ xuống đáy */
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+  }
+  
+  .hero-left {
+    flex: 1;
+    z-index: 10;
+    padding-bottom: 140px;
+    position: relative; /* Để chứa các gợn sóng absolute */
+  }
+
+  
